@@ -57,33 +57,56 @@ Comment the session:
 
 
  #[temperature_sensor FLY-SHT42]
+ 
  #sensor_type: temperature_mcu
+ 
  #sensor_mcu: sht42
 
 and add the new macro which already includes the MCU temperature reading.
 
 
  # Printer.cfg
+
 [temperature_fan sht42_cool]
+
 pin: PD14 # Bed Heater terminals, XYE board
+
 max_power: 1.0
+
 max_speed: 1.0
+
 min_speed: 0.05
+
 shutdown_speed: 0.0 # 0.9
+
 kick_start_time: 0.1
+
 cycle_time: 0.01 # 0.01
+
 off_below: 0.25 # 0.15
+
 sensor_type: temperature_mcu
+
 sensor_mcu: sht42
+
 #sensor_pin: PF4 # TH0 socket, Z board
+
 min_temp: 0
+
 max_temp: 80
+
 target_temp: 50.0
+
 control: pid
+
 hardware_pwm: false
+
 pid_kp: 40.0
+
 pid_ki: 5.0
+
 pid_kd: 0.01
+
 #gcode_id: A
 
 The game is done! If the temperature of the Toolboard goes above 50.0 degrees the fan turns on thus keeping the card not above 50.0 and consequently avoiding errors.

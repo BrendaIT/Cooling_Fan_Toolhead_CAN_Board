@@ -56,14 +56,14 @@ Step 10: The Gcode Macro must be inserted in your printer.cfg, remember to chang
 Comment the session:
 
 
-# [temperature_sensor FLY-SHT42]
-#sensor_type: temperature_mcu
-#sensor_mcu: sht42
+ #[temperature_sensor FLY-SHT42]
+ #sensor_type: temperature_mcu
+ #sensor_mcu: sht42
 
 and add the new macro which already includes the MCU temperature reading.
 
 
-## Printer.cfg
+ # Printer.cfg
 [temperature_fan sht42_cool]
 pin: PD14 # Bed Heater terminals, XYE board
 max_power: 1.0
